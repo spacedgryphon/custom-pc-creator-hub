@@ -21,8 +21,9 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20">
-        <div className="container">
+      <section className="pt-32 pb-20 relative">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb')] bg-cover bg-center opacity-10" />
+        <div className="container relative">
           <div className="flex flex-col items-center text-center animate-fade-up">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-text">
               Custom Gaming PCs<br />Built For Victory
