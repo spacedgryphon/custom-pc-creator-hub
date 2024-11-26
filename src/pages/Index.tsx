@@ -7,7 +7,7 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Navigation */}
       <nav className="fixed w-full z-50 top-4 px-4">
-        <div className="container mx-auto bg-background/60 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60 border border-border/40 rounded-lg shadow-lg">
+        <div className="container mx-auto bg-background/60 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60 border border-border/40 rounded-2xl shadow-lg">
           <div className="flex h-16 items-center px-4">
             <div className="text-2xl font-bold gradient-text">PowerPlay PCs</div>
             <div className="flex-1" />
