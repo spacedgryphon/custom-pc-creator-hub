@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Cpu, Gpu, Trophy, Wrench, ChevronRight, Gamepad } from "lucide-react";
+import { Cpu, PcCase, Trophy, Wrench, ChevronRight, Gamepad } from "lucide-react";
 
 const Index = () => {
   return (
@@ -95,7 +95,7 @@ const Index = () => {
             ].map((build, index) => (
               <Card key={index} className="overflow-hidden group">
                 <div className="aspect-[4/3] bg-muted/50 flex items-center justify-center">
-                  <Gpu className="h-20 w-20 text-primary/50 group-hover:text-primary transition-colors" />
+                  <PcCase className="h-20 w-20 text-primary/50 group-hover:text-primary transition-colors" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2">{build.name}</h3>
