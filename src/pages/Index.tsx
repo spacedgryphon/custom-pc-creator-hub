@@ -6,14 +6,16 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Navigation */}
-      <nav className="fixed w-full z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border/40">
-        <div className="container flex h-16 items-center">
-          <div className="text-2xl font-bold gradient-text">PowerPlay PCs</div>
-          <div className="flex-1" />
-          <div className="hidden md:flex gap-6">
-            <a href="#builds" className="text-sm hover:text-primary transition-colors">Our Builds</a>
-            <a href="#features" className="text-sm hover:text-primary transition-colors">Features</a>
-            <a href="#contact" className="text-sm hover:text-primary transition-colors">Contact</a>
+      <nav className="fixed w-full z-50 top-4 px-4">
+        <div className="container mx-auto bg-background/60 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60 border border-border/40 rounded-lg shadow-lg">
+          <div className="flex h-16 items-center px-4">
+            <div className="text-2xl font-bold gradient-text">PowerPlay PCs</div>
+            <div className="flex-1" />
+            <div className="hidden md:flex gap-6">
+              <a href="#builds" className="text-sm hover:text-primary transition-colors">Our Builds</a>
+              <a href="#features" className="text-sm hover:text-primary transition-colors">Features</a>
+              <a href="#contact" className="text-sm hover:text-primary transition-colors">Contact</a>
+            </div>
           </div>
         </div>
       </nav>
