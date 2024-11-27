@@ -1,8 +1,31 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Cpu, PcCase, Trophy, Wrench, ChevronRight, Gamepad } from "lucide-react";
+import { useEffect } from "react";
 
 const Index = () => {
+  useEffect(() => {
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-up', 'opacity-100');
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, {
+      threshold: 0.1,
+      rootMargin: '50px',
+    });
+
+    document.querySelectorAll('.scroll-animation').forEach((element) => {
+      element.classList.add('opacity-0');
+      observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen">
       {/* Navigation */}
@@ -43,7 +66,7 @@ const Index = () => {
       {/* Features Section */}
       <section id="features" className="py-20 bg-muted/50">
         <div className="container">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Us</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 scroll-animation">Why Choose Us</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
@@ -62,7 +85,11 @@ const Index = () => {
                 description: "Thoroughly tested and optimized for maximum performance"
               }
             ].map((feature, index) => (
-              <Card key={index} className="p-6 bg-background/50 backdrop-blur border-primary/10 hover:border-primary/20 transition-colors">
+              <Card 
+                key={index} 
+                className="p-6 bg-background/50 backdrop-blur border-primary/10 hover:border-primary/20 transition-colors scroll-animation"
+                style={{ transitionDelay: `${index * 150}ms` }}
+              >
                 <div className="text-center">
                   {feature.icon}
                   <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
@@ -77,7 +104,7 @@ const Index = () => {
       {/* Popular Builds Section */}
       <section id="builds" className="py-20">
         <div className="container">
-          <h2 className="text-3xl font-bold text-center mb-12">Popular Builds</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 scroll-animation">Popular Builds</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
@@ -96,7 +123,11 @@ const Index = () => {
                 specs: ["RTX 4090", "Ryzen 9 7950X", "64GB RAM", "4TB NVMe SSD"]
               }
             ].map((build, index) => (
-              <Card key={index} className="overflow-hidden group">
+              <Card 
+                key={index} 
+                className="overflow-hidden group scroll-animation"
+                style={{ transitionDelay: `${index * 150}ms` }}
+              >
                 <div className="aspect-[4/3] bg-muted/50 flex items-center justify-center">
                   <PcCase className="h-20 w-20 text-primary/50 group-hover:text-primary transition-colors" />
                 </div>
@@ -122,13 +153,13 @@ const Index = () => {
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-muted/50">
         <div className="container max-w-md">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 scroll-animation">
             <h2 className="text-3xl font-bold mb-4">Ready to Start?</h2>
             <p className="text-muted-foreground">
               Get in touch with us to discuss your dream gaming PC build
             </p>
           </div>
-          <Card className="p-6">
+          <Card className="p-6 scroll-animation">
             <form className="space-y-4">
               <input
                 type="email"
